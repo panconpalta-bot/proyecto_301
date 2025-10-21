@@ -6,22 +6,22 @@ import userRoutes from './routes/userRoutes.js';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 300;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.get('/',(req,res) => {
+app.get('/',(req, res) => {
     res.json({
-        message:'api corriendo correctamente'
+        message:'Api corriendo correctamente'
     });
-
 });
 
-//rutas qie deseo usar
-app.use('api/users',userRoutes);
+//Rutas que deseo usar
+app.use('/api/users',userRoutes);
 
-app.listen(PORT,()=>{
-    console.log("servidor corriendo exitosamente ;)")
-})
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo y escuchando en el puerto ${PORT}`);
+});
+
