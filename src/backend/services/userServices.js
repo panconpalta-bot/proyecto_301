@@ -11,7 +11,7 @@ export const userService ={
                 data :{email, name}
             })
         }catch(error){
-            throw error('Error al crear usuario' + error.message);
+            throw new Error('Error al crear usuario' + error.message);
         }
     },
 
@@ -29,7 +29,8 @@ export const userService ={
         try{
             return await prisma.user.update({
             Where :{id:parseInt(id)},
-        });
+            data: data
+        })
         }catch(error){
             throw error ('Error al actualizar usuario'+error.message);
         }

@@ -6,7 +6,7 @@ export const userController = {
             const users = await userService.getAllUsers();
             res.status(200).json({
                 succes: true,
-                data:users
+                data: users
             })
         }catch(error){
             res.status(500).json({
@@ -22,13 +22,13 @@ export const userController = {
             //Validacion basica
             if(!email || !name){
                 return res.status(400).json({
-                    succes:false,
+                    succes: false,
                     message:'Email y nombre son obligatorios'
                 });
             }
             const newUser = await userService.createUser({email, name});
             res.status(201).json({
-                succes:true,
+                succes: true,
                 data: newUser,
                 message: 'Usuario creado correctamente'
             });
@@ -48,15 +48,15 @@ export const userController = {
             const updateUser = await userService.updateUser(id,updateData);
 
             res.status(200).json({
-                succes:true,
-                data:updateUser,
+                succes: true,
+                data: updateUser,
                 message: 'Usuario actualizado correctamente'
-            })
+            });
 
         }catch(error){
             res.status(500).json({
-                sucess:false,
-                message:error.message
+                sucess: false,
+                message: error.message
             });
         }
     }
