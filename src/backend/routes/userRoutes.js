@@ -74,7 +74,7 @@ router.post('/',userController.createUser);
  *      500:
  *        description: Error del servidor
  */
-router.put('/:id',userController.updateUser);
+router.put('/:id- ',userController.updateUser);
 /**
  * @swagger
  * /api/users/:
