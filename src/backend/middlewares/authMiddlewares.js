@@ -1,4 +1,4 @@
-import { verify } from "jsonwebtoken";
+import { verifyToken } from "jsonwebtoken";
 import { verifyToken } from "../utils/auth.js";
 
 export const authenticate = (req, res, next) =>{

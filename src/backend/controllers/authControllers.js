@@ -4,10 +4,10 @@ export const authControllers = {
     //registro
     async register(req,res){
         try{
-            const {email, name, passowrd} = req.body;
-            const result =  await authServices. register({email, name, passowrd});
+            const {email, name, password} = req.body;
+            const result =  await authServices. register({email, name, password});
 
-            res.status(201),json({
+            res.status(201).json({
                 succes: true,
                 mesage: "Usuario registrado correctamente",
                 data: result

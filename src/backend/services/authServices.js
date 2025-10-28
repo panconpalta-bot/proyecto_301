@@ -5,7 +5,7 @@ const prisma = new PrismaClient;
 
 export const authServices = {
     //Registrar usuario
-    async registerUser(data){
+    async register(data){
         try{
             const {email, name, password} = data;
             const hashedPassword = await hashPassword(password);
