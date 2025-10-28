@@ -13,5 +13,10 @@ model User {
   id Int @id @default(autoincrement())
   email String @unique
   name String 
+  password String? //metodo tradicional
+  googleId String? //metodo login con google
+  avatar String? //obtener la foto de perfil
+ 
+  
 }
 

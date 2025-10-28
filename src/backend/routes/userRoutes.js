@@ -1,5 +1,5 @@
 import express from 'express';
-import { userController } from '../controllers/userController.js';
+import { userControllers } from '../controllers/userControllers.js';
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ const router = express.Router();
 
 
 //Rutas para llamar al usuario
-router.get('/',userController.getUsers);
+router.get('/',userControllers.getUsers);
 /**
  * @swagger
  * components:
@@ -41,7 +41,7 @@ router.get('/',userController.getUsers);
  *      
  */
 
-router.post('/',userController.createUser);
+router.post('/',userControllers.createUser);
 /**
  * @swagger
  * /api/users:
@@ -74,32 +74,30 @@ router.post('/',userController.createUser);
  *      500:
  *        description: Error del servidor
  */
-router.put('/:id- ',userController.updateUser);
+
+router.put("/:id", userControllers.updateUser);
+
 /**
  * @swagger
- * /api/users/:
- *  post:
- *   summary: actualizar usuario
- *   tags: [Users]
- *   requestBody:
- *     required: true
- *     content:
- *       application/json:
- *         schema:
- *           type:object
- *           properties:
- *             id:
- *               type: int
- *               example: 1
- *             email:
- *                type: string
- *                example: jack@gmail.com
- *              name:
- *                type: string
- *                example: jack
- *   responses: 
- *     200:
- *       description: usuario actulizado correctamente
+ * /api/users/{id}:
+ *  delete:
+ *    summary: Eliminar usuario
+ *    tags: [Users]
+ *    parameters:
+ *      - in: path
+ *        name: id
+ *        required: true
+ *        schema:
+ *          type: integer
+ *        description: ID del usuario
+ *    responses:
+ *      200:
+ *        description: Usuario eliminado correctamente
+ *      404:
+ *        description: Usuario no encontrado
+ *      500:
+ *        description: Error del servidor
+ *
  */
 //metodo para eliminar delete
 //metodo para modificar patch
