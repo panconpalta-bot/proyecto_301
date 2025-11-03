@@ -14,7 +14,7 @@ model User {
   email String @unique
   name String 
   password String? //metodo tradicional
-  googleId String? //metodo login con google
+  googleId String? @unique //metodo login con google
   avatar String? //obtener la foto de perfil
  
   
