@@ -1,79 +1,139 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Banner from "../components/Banner";
 
-export default (props) => {
-  const [input1, onChangeInput1] = useState('');
-
+function Home() {
   return (
-    <div className="items-start bg-white">
-      <div className="bg-white w-[1740px]">
-        <div className="self-full mb-[0px]">
-        
-          <div className="flex items-full self-stretch bg-[#EA4335] py-1">
-            <img
-              src={"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/ce85db44-cb3b-47c0-96d0-3d9b6a9b9945"} 
-              className="w-[50px] h-[50px] ml-[50px] mr-5 object-fill"
-            />
-            <span className="text-black text-center text-xs">{"POKE STORE"}</span>
-            <div className="flex-1 self-stretch"></div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Navbar en la parte superior */}
+      <Navbar />
+      
+      {/* Banner Hero debajo del Navbar */}
+      <Banner />
+      
+      {/* Sección de Categorías */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-4">
+          Explora Nuestras Categorías
+        </h2>
+        <p className="text-center text-gray-600 mb-12 text-lg">
+          Encuentra los mejores productos Pokémon organizados por categoría
+        </p>
 
-          
-            <div className="flex items-center bg-[#FAFAFAED] w-[300px] px-2 rounded-[10px]">
-              <div className="flex flex-col items-start w-7 p-[5px]">
-                <span className="text-[#3C3C43] text-lg">
-                  🔍
-                </span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Tarjeta Figuras */}
+          <a
+            href="/figuras"
+            className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-blue-400 to-blue-600"
+          >
+            <div className="aspect-square flex items-center justify-center p-8">
+              <span className="text-8xl transform group-hover:scale-110 transition-transform duration-300">
+                🎮
+              </span>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+              <div>
+                <h3 className="text-white font-bold text-2xl mb-2">FIGURAS</h3>
+                <p className="text-white/90 text-sm">Coleccionables únicos</p>
               </div>
-              <input
-                placeholder={"Search"}
-                value={input1}
-                onChange={(event) => onChangeInput1(event.target.value)}
-                className="flex-1 self-stretch text-[#3C3C43] bg-transparent text-[17px] py-[7px] mr-1 border-0"
-              />
             </div>
-
-            <div className="flex-1 self-stretch"></div>
-
-         
-            <div
-              className="flex flex-col items-start w-24 py-[13px] px-5 mr-[89px] rounded-[10px]" 
-              style={{ background: "linear-gradient(180deg, #979797, #FFFFFF)" }}
-            >
-              <Link to="/Login" className="text-sm text-center text-gray-600">
-                ACCEDER
-              </Link>
+            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </div>
-          </div>
+          </a>
 
-     
-          <div className="flex justify-between items-start self-stretch bg-[#808080] py-[21px]">
-            <Link to="/figuras" className="text-black text-xs ml-[76px] hover:underline">
-              FIGURAS
-            </Link>
-            <Link to="/peluches" className="text-black text-xs hover:underline">
-              PELUCHES
-            </Link>
-            <Link to="/ropa" className="text-black text-xs hover:underline">
-              ROPA
-            </Link>
-            <Link to="/cartas" className="text-black text-xs hover:underline">
-              CARTAS
-            </Link>
-            <Link to="/ofertas" className="text-black text-xs mr-[118px] hover:underline">
-              OFERTAS
-            </Link>
+          {/* Tarjeta Peluches */}
+          <a
+            href="/peluches"
+            className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-pink-400 to-pink-600"
+          >
+            <div className="aspect-square flex items-center justify-center p-8">
+              <span className="text-8xl transform group-hover:scale-110 transition-transform duration-300">
+                🧸
+              </span>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+              <div>
+                <h3 className="text-white font-bold text-2xl mb-2">PELUCHES</h3>
+                <p className="text-white/90 text-sm">Suaves y adorables</p>
+              </div>
+            </div>
+            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+
+          {/* Tarjeta Ropa */}
+          <a
+            href="/ropa"
+            className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-yellow-400 to-yellow-600"
+          >
+            <div className="aspect-square flex items-center justify-center p-8">
+              <span className="text-8xl transform group-hover:scale-110 transition-transform duration-300">
+                👕
+              </span>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+              <div>
+                <h3 className="text-white font-bold text-2xl mb-2">ROPA</h3>
+                <p className="text-white/90 text-sm">Estilo trainer</p>
+              </div>
+            </div>
+            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+
+          {/* Tarjeta Cartas */}
+          <a
+            href="/cartas"
+            className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 bg-gradient-to-br from-purple-400 to-purple-600"
+          >
+            <div className="aspect-square flex items-center justify-center p-8">
+              <span className="text-8xl transform group-hover:scale-110 transition-transform duration-300">
+                🃏
+              </span>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+              <div>
+                <h3 className="text-white font-bold text-2xl mb-2">CARTAS</h3>
+                <p className="text-white/90 text-sm">TCG oficial</p>
+              </div>
+            </div>
+            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* Sección de Productos Destacados */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-4">
+            Los Más Vendidos
+          </h2>
+          <p className="text-center text-gray-600 mb-12 text-lg">
+            Descubre los productos favoritos de nuestros clientes
+          </p>
+          
+          <div className="text-center py-12 bg-gray-50 rounded-2xl">
+            <span className="text-6xl mb-4 block">🎯</span>
+            <p className="text-gray-600 text-lg font-semibold">
+              Próximamente: Catálogo de productos
+            </p>
           </div>
         </div>
-
-        {/* Hero section */}
-        <div
-          className="flex flex-col items-start self-stretch bg-[url('https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f80a78a9-c8fc-4a02-af65-79e26211abe0')] bg-cover bg-center pl-[385px] mb-[147px] mx-[5px]"
-        >
-          <span className="text-white text-[64px] text-center mt-[196px] mb-[321px] whitespace-pre-line">
-            {"TENEMOS MAS \nDE 100 PRODUCTOS  \nPOKEMON"}
-          </span>
-        </div>
-      </div>
+      </section>
     </div>
   );
-};
+}
+
+export default Home;
