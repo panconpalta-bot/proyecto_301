@@ -1,25 +1,9 @@
-import { useState, useEffect } from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
-
-
-
-function Home() {
-  const [token, setToken] = useState(null);
-  useEffect(() => {
-    const storedToken = localStorage.getItem("authToken");
-    if (storedToken) {
-      setToken(storedToken);
-    }
-  }),
-    [];
-
-  const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    setToken(null);
-  };
-
-  return (
-    <div className="items-start bg-white">
+export default (props) => {
+	const [input1, onChangeInput1] = useState('');
+	return (
+		<div className="items-start bg-white">
 			<div className="bg-white w-[1440px]">
 				<div className="self-stretch mb-[1px]">
 					<div className="flex items-center self-stretch bg-[#EA4335] py-2.5">
@@ -51,12 +35,9 @@ function Home() {
 							style={{
 								background: "linear-gradient(180deg, #979797, #FFFFFF)"
 							}}>
-							<Link
-            to="/register"
-            className="text-sm text-center text-gray-600"
-          >
-            Registrate aqui
-          </Link>
+							<span className="text-black text-xs" >
+								{"ACCEDER"}
+							</span>
 						</div>
 					</div>
 					<div className="flex justify-between items-start self-stretch bg-[#808080] py-[21px]">
@@ -77,13 +58,12 @@ function Home() {
 						</span>
 					</div>
 				</div>
-				<div className="flex flex-col items-start self-stretch bg-[url('fronted/public/inicio.svg')] bg-cover bg-center pl-[385px] mb-[147px] mx-[5px]">
+				<div className="flex flex-col items-start self-stretch bg-[url('https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f80a78a9-c8fc-4a02-af65-79e26211abe0')] bg-cover bg-center pl-[385px] mb-[147px] mx-[5px]">
 					<span className="text-white text-[64px] text-center w-[611px] mt-[196px] mb-[321px]" >
 						{"TENEMOS MAS \nDE 100 PRODUCTOS  \nPOKEMON"}
 					</span>
 				</div>
 			</div>
 		</div>
-  );
+	)
 }
-export default Home;

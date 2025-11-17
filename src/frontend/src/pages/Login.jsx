@@ -35,10 +35,10 @@ function Login() {
   };
   
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-x-6 bg-white rounded-xl shadow-md">
-        <h1 className="text-2xl font-bold text-center">Iniciar Sesion</h1>
-        <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="flex items-center justify-center min-h-screen bg-gray-300">
+      <div className="w-full max-w-md p-10 space-x-6 bg-grey-700 rounded-xl shadow-md">
+        <h1 className="text-2xl font-bold text-center">ACCEDER</h1>
+        <form onSubmit={handleSubmit} className="space-y-10">
           <div>
             <label
               htmlFor="email"
@@ -75,7 +75,7 @@ function Login() {
           <div>
             <button
               type="submit"
-              className="w-full px-4 py-2 text-white font-medium bg-blue-500 border border-transparent rounded-md shadow-md hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 "
+              className="w-full px-4 py-2 text-black font-medium bg-white-500 border border-transparent rounded-md shadow-md hover:bg-white-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 "
             >
               Iniciar Sesion
             </button>
@@ -87,10 +87,12 @@ function Login() {
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
         <div className="text-center">
+          
           <a
-            className="inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-orange-500"
+            className="inline-flex items-left justify-center w-full px-4 py-2 text-sm font-medium text-black bg-white-600 border border-transparent rounded-md shadow-sm hover:bg-orange-600"
             href={GOOGLE_AUTH_URL}
           >
+            <img src="public/Google.ico"  width="20" height="20"  gap= "8px"  />
             Iniciar sesion con Google
           </a>
         </div>
@@ -100,7 +102,7 @@ function Login() {
         </p>
         <Link
           to="/register"
-          className="font-medium text-blue-600 hover:text-orange-500"
+          className="text-sm text-center text-gray-600"
         >
           Registrate aqui
         </Link>

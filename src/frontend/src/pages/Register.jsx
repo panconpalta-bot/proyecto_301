@@ -39,78 +39,40 @@ function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-md">
-        <h1 className="text-2xl font-bold text-center">Crear una cuenta</h1>
-        
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-              Nombre
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            />
-          </div>
-          
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Correo Electrónico
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Contraseña
-            </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            />
-          </div>
-
-          {/* Mensaje de error*/}
-          {error && <p className="text-sm text-center text-red-600">{error}</p>}
-
-          <div>
-            <button
-              type="submit"
-              className="w-full px-4 py-2 font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              Registrarse
-            </button>
-          </div>
-        </form>
-
-        <p className="text-sm text-center text-gray-600">
-          ¿Ya tienes una cuenta?{' '}
-          <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
-            Inicia sesión
-          </Link>
-        </p>
-      </div>
-    </div>
-  );
+		<div className="flex items-center justify-center min-h-screen bg-gray-100">
+			<div className="flex flex-col w-[441px] rounded-[10px]" 
+				style={{
+					background: "linear-gradient(180deg, #7D7D7D, #D9D9D9)"
+				}}>
+				<div className="flex flex-col items-center self-stretch mt-[134px] mb-[61px]">
+					<span className="text-[#010101] text-5xl font-bold" >
+						{"REGISTRARSE"}
+					</span>
+				</div>
+				<div className="flex flex-col items-start self-stretch bg-[#FFFDFD] py-[37px] pl-4 mb-[61px] ml-[26px] mr-[78px] rounded-[15px] border border-solid border-[#C7C7C7]">
+					<span className="text-black text-2xl font-bold" >
+						{"NAME"}
+					</span>
+				</div>
+				<div className="flex flex-col items-start self-stretch bg-[#FFFDFD] py-[37px] pl-[27px] mb-[61px] ml-[26px] mr-[78px] rounded-[15px] border border-solid border-[#C7C7C7]">
+					<span className="text-black text-2xl font-bold" >
+						{"EMAIL"}
+					</span>
+				</div>
+				<div className="flex flex-col items-start self-stretch bg-[#FFFDFD] py-[37px] pl-4 mb-[61px] ml-[26px] mr-[78px] rounded-[15px] border border-solid border-[#C7C7C7]">
+					<span className="text-black text-2xl font-bold" >
+						{"PASSWORD"}
+					</span>
+				</div>
+				<button className="flex flex-col items-center self-stretch bg-white text-left py-5 mb-[87px] ml-[26px] mr-[84px] rounded-[20px] border-0"
+					onClick={()=>alert("Pressed!")}>
+					<span className="text-black text-[32px] font-bold" >
+						{"INGRESAR"}
+					</span>
+				</button>
+			</div>
+		</div>
+	)
 }
 
 export default Register;

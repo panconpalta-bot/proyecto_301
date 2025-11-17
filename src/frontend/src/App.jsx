@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import LoginSuccess from "./pages/LoginSuccess";
 import LoginError from './pages/LoginError';
 
+import Figuras from "./pages/Figuras";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/login-error" element={<LoginError />} />
         <Route path="/login-success" element={<LoginSuccess />} />
+        <Route path="/Figuras" element={<Figuras/>} />
       </Routes>
     </BrowserRouter>
   );
