@@ -35,7 +35,7 @@ function Login() {
   };
   
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-300">
+    <div className="flex items-center justify-center min-h-screen bg-white">
       <div className="w-full max-w-md p-10 space-x-6 bg-grey-700 rounded-xl shadow-md">
         <h1 className="text-2xl font-bold text-center">ACCEDER</h1>
         <form onSubmit={handleSubmit} className="space-y-10">
@@ -92,7 +92,7 @@ function Login() {
             className="inline-flex items-left justify-center w-full px-4 py-2 text-sm font-medium text-black bg-white-600 border border-transparent rounded-md shadow-sm hover:bg-orange-600"
             href={GOOGLE_AUTH_URL}
           >
-            <img src="public/Google.ico"  width="20" height="20"  gap= "8px"  />
+            <img src="/src/frontend/public/Google.ico"  width="20" height="20"  gap= "8px"  />
             Iniciar sesion con Google
           </a>
         </div>

@@ -4,8 +4,9 @@ import Register from './pages/Register';
 import Login from "./pages/Login";
 import LoginSuccess from "./pages/LoginSuccess";
 import LoginError from './pages/LoginError';
-
 import Figuras from "./pages/Figuras";
+import Carrito from "./pages/Carrito";
+import Peluches from "./pages/Peluches";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/login-error" element={<LoginError />} />
         <Route path="/login-success" element={<LoginSuccess />} />
         <Route path="/Figuras" element={<Figuras/>} />
+        <Route path="/Carrito" element={<Carrito/>} />
+        <Route path="/Peluches" element={<Peluches/>} />
       </Routes>
     </BrowserRouter>
   );

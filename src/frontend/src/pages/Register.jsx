@@ -1,18 +1,16 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  
-  // Para redirigir al usuario después del registro
+
   const navigate = useNavigate();
 
-  // Función que se ejecuta al enviar el formulario
   const handleSubmit = async (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
     setError(null);
 
     try {
@@ -32,47 +30,71 @@ function Register() {
 
       console.log('Usuario registrado:', data);
       navigate('/login-success');
-
     } catch (err) {
       setError(err.message);
     }
   };
 
   return (
-		<div className="flex items-center justify-center min-h-screen bg-gray-100">
-			<div className="flex flex-col w-[441px] rounded-[10px]" 
-				style={{
-					background: "linear-gradient(180deg, #7D7D7D, #D9D9D9)"
-				}}>
-				<div className="flex flex-col items-center self-stretch mt-[134px] mb-[61px]">
-					<span className="text-[#010101] text-5xl font-bold" >
-						{"REGISTRARSE"}
-					</span>
-				</div>
-				<div className="flex flex-col items-start self-stretch bg-[#FFFDFD] py-[37px] pl-4 mb-[61px] ml-[26px] mr-[78px] rounded-[15px] border border-solid border-[#C7C7C7]">
-					<span className="text-black text-2xl font-bold" >
-						{"NAME"}
-					</span>
-				</div>
-				<div className="flex flex-col items-start self-stretch bg-[#FFFDFD] py-[37px] pl-[27px] mb-[61px] ml-[26px] mr-[78px] rounded-[15px] border border-solid border-[#C7C7C7]">
-					<span className="text-black text-2xl font-bold" >
-						{"EMAIL"}
-					</span>
-				</div>
-				<div className="flex flex-col items-start self-stretch bg-[#FFFDFD] py-[37px] pl-4 mb-[61px] ml-[26px] mr-[78px] rounded-[15px] border border-solid border-[#C7C7C7]">
-					<span className="text-black text-2xl font-bold" >
-						{"PASSWORD"}
-					</span>
-				</div>
-				<button className="flex flex-col items-center self-stretch bg-white text-left py-5 mb-[87px] ml-[26px] mr-[84px] rounded-[20px] border-0"
-					onClick={()=>alert("Pressed!")}>
-					<span className="text-black text-[32px] font-bold" >
-						{"INGRESAR"}
-					</span>
-				</button>
-			</div>
-		</div>
-	)
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div
+        className="flex flex-col w-[541px]  h-[900px]rounded-[12px]"
+        style={{
+          background: 'linear-gradient(180deg, #7D7D7D, #D9D9D9)',
+        }}
+      >
+        <div className="flex flex-col items-center self-stretch mt-[134px] mb-[61px]">
+          <span className="text-[#010101] text-5xl font-bold">REGISTRARSE</span>
+        </div>
+
+        <form
+          className="flex flex-col items-center self-stretch px-[26px] pb-[61px]"
+          onSubmit={handleSubmit}
+        >
+          {/* NAME */}
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Name"
+            className="w-full py-[20px] px-4 mb-[20px] rounded-[15px] border border-solid border-[#C7C7C7]"
+            required
+          />
+
+          {/* EMAIL */}
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            className="w-full py-[20px] px-4 mb-[20px] rounded-[15px] border border-solid border-[#C7C7C7]"
+            required
+          />
+
+          {/* PASSWORD */}
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            className="w-full py-[20px] px-4 mb-[40px] rounded-[15px] border border-solid border-[#C7C7C7]"
+            required
+          />
+
+          {/* ERROR */}
+          {error && <p className="text-red-500 mb-4">{error}</p>}
+
+          {/* SUBMIT BUTTON */}
+          <button
+            type="submit"
+            className="w-full py-5 bg-white rounded-[20px] text-black text-[32px] font-bold"
+          >
+            INGRESAR
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default Register;

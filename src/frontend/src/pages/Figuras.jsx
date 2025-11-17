@@ -1,11 +1,12 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
 export default (props) => {
 	const [input1, onChangeInput1] = useState('');
 	const [input2, onChangeInput2] = useState('');
 	return (
 		<div className="items-start bg-white">
-			<div className="bg-white w-[1440px]">
-				<div className="self-stretch mb-[1px]">
+			<div className="bg-white w-[1740px]">
+				<div className="self-stretch mb-[0px]">
 					<div className="flex items-center self-stretch bg-[#EA4335] py-2.5">
 						<img
 							src={"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fbfd6699-16ee-4038-85c9-4855e194e56a"} 
@@ -19,7 +20,7 @@ export default (props) => {
 						<div className="flex items-center bg-[#FAFAFAED] w-[300px] px-2 rounded-[10px]">
 							<div className="flex flex-col items-start w-7 p-[5px]">
 								<span className="text-[#3C3C43] text-lg" >
-									{"􀊫"}
+									🔍
 								</span>
 							</div>
 							<input
@@ -35,28 +36,28 @@ export default (props) => {
 							style={{
 								background: "linear-gradient(180deg, #979797, #FFFFFF)"
 							}}>
-							<span className="text-black text-xs" >
-								{"ACCEDER"}
-							</span>
+							<Link to="/Login" className="text-sm text-center text-gray-600">
+                ACCEDER
+              </Link>
 						</div>
 					</div>
-					<div className="flex justify-between items-start self-stretch bg-[#808080] py-[21px]">
-						<span className="text-black text-xs ml-[76px]" >
-							{"FIGURAS"}
-						</span>
-						<span className="text-black text-xs" >
-							{"PELUCHES"}
-						</span>
-						<span className="text-black text-xs" >
-							{"ROPA"}
-						</span>
-						<span className="text-black text-xs" >
-							{"CARTAS"}
-						</span>
-						<span className="text-black text-xs mr-[118px]" >
-							{"OFERTAS"}
-						</span>
-					</div>
+					 <div className="flex justify-between items-start self-stretch bg-[#808080] py-[21px]">
+                      <Link to="/figuras" className="text-black text-xs ml-[76px] hover:underline">
+                        FIGURAS
+                      </Link>
+                      <Link to="/peluches" className="text-black text-xs hover:underline">
+                        PELUCHES
+                      </Link>
+                      <Link to="/ropa" className="text-black text-xs hover:underline">
+                        ROPA
+                      </Link>
+                      <Link to="/cartas" className="text-black text-xs hover:underline">
+                        CARTAS
+                      </Link>
+                      <Link to="/ofertas" className="text-black text-xs mr-[118px] hover:underline">
+                        OFERTAS
+                      </Link>
+                    </div>
 				</div>
 				<div className="flex items-start self-stretch mb-5 ml-[3px] mr-[59px]">
 					<div className="flex flex-col items-center bg-white w-[234px] mr-3 rounded-[20px]" 
@@ -66,7 +67,7 @@ export default (props) => {
 						<div className="flex items-center self-stretch bg-[#FAFAFAED] px-2 mb-2.5 rounded-[10px]">
 							<div className="flex flex-col items-start w-7 p-[5px]">
 								<span className="text-[#3C3C43] text-lg" >
-									{"􀊫"}
+									🔍
 								</span>
 							</div>
 							<input
@@ -188,6 +189,8 @@ export default (props) => {
 							</span>
 						</button>
 					</div>
+
+
 					<div className="flex flex-col w-[200px] mt-[41px] mr-[34px] gap-[43px]">
 						<div className="flex flex-col items-start self-stretch bg-white py-[25px] rounded-[10px]" 
 							style={{
@@ -208,7 +211,9 @@ export default (props) => {
 								/>
 							</button>
 						</div>
-						<div className="flex flex-col items-start self-stretch bg-white rounded-[10px]" 
+
+
+						<div className="flex flex-col w-[200px] mt-[41px] mr-[34px] gap-[43px]" 
 							style={{
 								boxShadow: "0px 4px 4px #00000040"
 							}}>
@@ -240,12 +245,14 @@ export default (props) => {
 							<span className="text-black text-[15px] font-bold w-[120px] mb-7 ml-[27px]" >
 								{"Pokemon Pack X3 Figuras De Batalla Pokemon 6 Cm\n\nS/ 59.90"}
 							</span>
-							<div className="flex flex-col items-start self-stretch bg-[#1E88E5] py-[7px] pl-[30px] mb-[22px] mx-10 rounded-[20px]">
-								<img
-									src={"https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a28c87ab-9221-4545-9967-ed34110d2c23"} 
-									className="w-[50px] h-[38px] object-fill"
-								/>
-							</div>
+              <Link to="/carrito">
+              <button className="flex flex-col items-start self-stretch bg-[#1E88E5] py-[8px] pl-[30px] mb-[22px] mx-10 rounded-[20px]">
+              <img
+              src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/14b3b541-d8d1-416c-ab53-214745f55571"
+              className="w-[70px] h-[38px] object-fill"
+              />
+              </button>
+              </Link>
 						</div>
 						<div className="flex flex-col items-start self-stretch bg-white rounded-[10px]" 
 							style={{
